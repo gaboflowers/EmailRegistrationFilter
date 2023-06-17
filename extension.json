@@ -1,6 +1,6 @@
 {
 	"name": "EmailRegistrationFilter",
-	"author": "gaboflowers",
+	"author": ["gaboflowers", "derconno"],
 	"description": "Allows or denies account registration according to the submitted email account",
 	"descriptionmsg": "emailregistrationfilter-desc",
 	"version": "0.2",
