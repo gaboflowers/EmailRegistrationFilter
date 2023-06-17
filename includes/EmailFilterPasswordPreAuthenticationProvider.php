@@ -7,7 +7,7 @@ use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Status;
 
-class EmailFilterPasswordPrimaryAuthenticationProvider
+class EmailFilterPasswordPreAuthenticationProvider
 	extends AbstractPreAuthenticationProvider {
 
 	public function testForAccountCreation( $user, $creator, array $reqs ) {
@@ -19,8 +19,6 @@ class EmailFilterPasswordPrimaryAuthenticationProvider
 
 		$userdata_req = AuthenticationRequest::getRequestByClass( $reqs, UserDataAuthenticationRequest::class );
 		if ( $userdata_req->email == null ) {
-			/* Nothing to do on no email. Might want to set $wgEmailConfirmToEdit=true;
-			 * or something like that */
 			if ($is_whitelist) {
 				$ret->fatal($error_msg);	
 			}
