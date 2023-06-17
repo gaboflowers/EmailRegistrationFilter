@@ -1,6 +1,6 @@
 <?php
 
-use MediaWiki\Auth\LocalPasswordPrimaryAuthenticationProvider;
+use MediaWiki\Auth\PreAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\UserDataAuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
@@ -8,7 +8,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Status;
 
 class EmailFilterPasswordPrimaryAuthenticationProvider
-	extends LocalPasswordPrimaryAuthenticationProvider {
+	extends PreAuthenticationProvider {
 
 	public function testForAccountCreation( $user, $creator, array $reqs ) {
 		$config = MediaWiki\MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'EmailRegistrationFilter' );
