@@ -1,13 +1,13 @@
 {
 	"name": "EmailRegistrationFilter",
-	"author": "gaboflowers",
+	"author": ["gaboflowers", "derconno"],
 	"description": "Allows or denies account registration according to the submitted email account",
 	"descriptionmsg": "emailregistrationfilter-desc",
-	"version": "0.1",
+	"version": "0.2",
 	"config": {
 		"PatternList": {
 			"value": [
-				"/.*@example.com$/"
+				"/.*@example\\.com$/"
 			],
 			"description": "List of patterns to preg_match against a submitted email"
 		},
@@ -24,13 +24,12 @@
 		"EmailRegistrationFilter": "GlobalVarConfig::newInstance"
 	},
 	"AutoloadClasses": {
-		"EmailFilterPasswordPrimaryAuthenticationProvider": "includes/EmailFilterPasswordPrimaryAuthenticationProvider.php"
+		"EmailFilterPasswordPreAuthenticationProvider": "includes/EmailFilterPasswordPreAuthenticationProvider.php"
 	},
 	"AuthManagerAutoConfig": {
-		"primaryauth": {
-			"EmailFilterPasswordPrimaryAuthenticationProvider": {
-				"class": "EmailFilterPasswordPrimaryAuthenticationProvider",
-				"sort": 0
+		"preauth": {
+			"EmailFilterPasswordPreAuthenticationProvider": {
+				"class": "EmailFilterPasswordPreAuthenticationProvider"
 			}
 		}
 	},

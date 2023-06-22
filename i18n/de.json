@@ -1,0 +1,4 @@
+{
+	"emailregistrationfilter-desc": "Ermöglicht oder verhindert eine Registrierung in Abhängigkeit von der angegebenen Email Adresse.",
+	"emailregistrationfilter-default-error-msg": "Die angegbene Email verstößt gegen den konfigurierten Filter!"
+}
